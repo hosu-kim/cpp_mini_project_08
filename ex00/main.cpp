@@ -6,7 +6,9 @@
 
 int main() {
 	// 1. VECTOR TEST
+	std::cout << "----- TEST easyfind() USING A VECTOR ------" << std::endl;
 	std::vector<int> v;
+	std::cout << "Pushing 10, 20, 30 into a vector..." << std::endl;
 	v.push_back(10);
 	v.push_back(20);
 	v.push_back(30);
@@ -16,17 +18,21 @@ int main() {
 		std::cout << "Found: " << *it << std::endl;
 
 		// `42` is not in the vector. => exception
-		easyfind(v, 42);
+		std::cout << "trying to find '42' in the vector." << std::endl;
+		easyfind(v, 42); // making a failuare case.
 	} catch (const std::exception& e) {
 		std::cerr << "Error: " << e.what() << std::endl;
 	}
 
 	// 2. LIST TEST
+	std::cout << "\n----- TEST easyfind() USING A LIST -----" << std::endl;
 	std::list<int> l;
+	std::cout << "Pushing 1, 2 into a list..." << std::endl;
 	l.push_back(1);
 	l.push_back(2);
 
 	try {
+		std::cout << "Trying to find '1' in the list." << std::endl;
 		std::list<int>::iterator it = easyfind(l, 1);
 		std::cout << "Found in list: " << *it << std::endl;
 	} catch (const std::exception& e) {
