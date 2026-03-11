@@ -1,3 +1,13 @@
+/*
+This exercise is about creating a class having a vector
+which can store 'N' numbers of integers.
+and the class has these member functions:
+1. func which you can add a number with in 'N' size if over throw an exception.
+2. func which you can add several numbers in a range of another vector or a list.
+3. func which finds the shortest span between the provided numbers: 6, 3, 17, 9 => 3
+4. func which finds the longest span between the provided numbers: 6, 3, 17, 9 => 14
+*/
+
 #ifndef SPAN_HPP
 # define SPAN_HPP
 

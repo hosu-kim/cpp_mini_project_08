@@ -6,6 +6,7 @@
 # include <deque>
 
 template <typename T>
+// 돌연변이 흉물
 class MutantStack : public std::stack<T> {
 	public:
 		// Orthodox Canonical Form
@@ -18,7 +19,7 @@ class MutantStack : public std::stack<T> {
 			return *this;
 		}
 		virtual ~MutantStack() {}
-
+//==============================================================================
 		// Iterators
 		typedef typename std::stack<T>::container_type::iterator iterator;
 		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
