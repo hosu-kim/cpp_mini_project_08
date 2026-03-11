@@ -1,7 +1,16 @@
 /*
 This exercise is about understanding what STL is.
 STL is Standard Template Library; it's a toolbox of pre-built data strutures(containers
-) and algorithms frequently used by developers
+) and algorithms frequently used by developers.
+and learning about two sequence containers, std::vector and std::list which store data.
+1. std::vector: Stores data in a contiguous space in memory
+    1. Access speed: very fast
+    2. Data modification speed: slow
+    3. memory efficiency: high
+2. std::list: Stores data in scattered spaces in memory
+    1. Acess speed: slow (finds them from the beginning)
+    2. Data modification speed: very fast (just changes the link and it's done)
+    3. Memory efficiency: low (alse has to store front and back address values)
 */
 
 #ifndef EASYFIND_HPP
