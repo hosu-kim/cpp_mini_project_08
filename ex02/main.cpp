@@ -12,7 +12,7 @@ int main() {
 
 	std::cout << "Top: " << mstack.top() << std::endl; // 17
 	
-	// Delates the element at the top.
+	// Deletes the element at the top.
 	mstack.pop();
 
 	std::cout << "Size: " << mstack.size() << std::endl; // 1
