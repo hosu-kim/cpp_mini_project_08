@@ -2,8 +2,8 @@
 #include "MutantStack.hpp"
 
 int main() {
-	// MUTANTSTACK TEST
-	std::cout << "--- MutantStack Test ---";
+	// STACK PROPERTIES TEST
+	// Tests whether it still has the properties of a stack.
 	std::cout << "--- MutantStack Test ---" << std::endl;
 	MutantStack<int> mstack;
 
@@ -12,6 +12,7 @@ int main() {
 
 	std::cout << "Top: " << mstack.top() << std::endl; // 17
 	
+	// Delates the element at the top.
 	mstack.pop();
 
 	std::cout << "Size: " << mstack.size() << std::endl; // 1
@@ -21,44 +22,48 @@ int main() {
 	mstack.push(737);
 	mstack.push(0);
 
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	MutantStack<int>::iterator iterBegin = mstack.begin();
+	MutantStack<int>::iterator iterEnd = mstack.end();
 
-	++it;
-	--it;
-	while (it != ite) {
-		std::cout << *it << std::endl;
-		++it;
+	++iterBegin;
+	--iterBegin;
+	while (iterBegin != iterEnd) {
+		std::cout << *iterBegin << std::endl;
+		++iterBegin;
 	}
 
 	// COPY CONSTRUCTOR TEST
 	std::stack<int> s(mstack);
 
+//==================================================================
 	std::cout << "\n--- std::list Comparison Test ---" << std::endl;
-	std::list<int> lstack;
+	std::list<int> testList;
 
-	lstack.push_back(5);
-	lstack.push_back(17);
+	testList.push_back(5);
+	testList.push_back(17);
 
-	std::cout << "Back: " << lstack.back() << std::endl;
+	std::cout << "Back: " << testList.back() << std::endl;
 
-	lstack.pop_back();
+	// Deletes the last element in the list
+	testList.pop_back();
 
-	std::cout << "Size: " << lstack.size() << std::endl;
+	std::cout << "Size: " << testList.size() << std::endl;
 
-	lstack.push_back(3);
-	lstack.push_back(5);
-	lstack.push_back(737);
-	lstack.push_back(0);
+	testList.push_back(3);
+	testList.push_back(5);
+	testList.push_back(737);
+	testList.push_back(0);
 
-	std::list<int>::iterator lit = lstack.begin();
-	std::list<int>::iterator lite = lstack.end();
+	std::list<int>::iterator listBegin = testList.begin();
+	std::list<int>::iterator listEnd = testList.end();
 
-	++lit;
-	--lit;
-	while (lit != lite) {
-		std::cout << *lit << std::endl;
-		++lit;
+	++listBegin;
+	--listBegin;
+	while (listBegin != listEnd) {
+		std::cout << *listBegin << std::endl;
+		++listBegin;
 	}
 	return 0;
 }
+
+// MutantStack should produce the same result as list.

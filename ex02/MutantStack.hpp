@@ -26,18 +26,26 @@ class MutantStack : public std::stack<T> {
 		virtual ~MutantStack() {}
 //==============================================================================
 		// Iterators
-		// 스택 안에 숨겨진 진짜 컨테이너의 화살표(반복자) 타입을 내 것으로 가져온다.
-		// `std::stack`은 숫자를 직접 비관하지 않고 내부의 다른 컨테이너(기본값: `std::deque`) 를 빌려서 쓴다.
-		// 자기가 빌려 쓰고 있는 컨테이너의 타입이 무엇인지 알려주는 별명이 `container_type`에 들어 있다.
+		// Brings the iterator type of the underlying container hidden inside the stack
+		// `std::stack` doesn't store data directly; it uses an internal container (default: `std::deque`).
+		// The alias `container_type` holds the information about which container it is currently using.
 		// 1. `std::stack<T>: 스택으로 가서
 		// 2. `::container_type`: 네가 내부적으로 쓰는 컨테이너 타입을 찾고
 		// 3. `::iterator`: 그 컨테이너가 사용하는 반복자 타입을 가져온다.
+		// `iterator`: iterator similar to just a pointer (you can modify, read and move...)
 		typedef typename std::stack<T>::container_type::iterator iterator;
+		// `const_iterator`: iterator similar to a pointer that can only read
+		//                   the object it points to, but cannot modify it.
 		typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+		// `reverse_iterator`: iterator that moves backwards
 		typedef typename std::stack<T>::container_type::reverse_iterator reverse_iterator;
+		// `const_reverse_iterator`: it can moves backwards but cannot modify the value
 		typedef typename std::stack<T>::container_type::const_reverse_iterator const_reverse_iterator;
 
+		// ==================== CORE PART OF THE SUBJECT ====================
+		// returns the iterator at the beginning
 		iterator begin() { return this->c.begin(); }
+		// returns the iterator at the end
 		iterator end() { return this->c.end(); }
 
 		const_iterator begin() const { return this->c.begin(); }
